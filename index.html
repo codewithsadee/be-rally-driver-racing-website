@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Rally Driver | Car Racing Competition 2021</title>
+
+  <!-- google font link -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+
+  <!-- fonawesome cdn -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <a href="#" class="logo">CHAMP MOTO&nbsp;|</a>
+
+      <div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <img src="./images/divider-top.png" alt="" class="divider-top">
+    </header>
+
+
+
+    <!-- <div class="navbar"> -->
+    <ul class="nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+    <!-- </div> -->
+
+    <main>
+
+      <section class="hero" id="home">
+
+
+        <h1><span>WORLD</span> MOTO CHAMPION OF <span>2021</span>
+          <ion-icon name="trophy"></ion-icon>
+        </h1>
+
+        <img src="./images/divider-bottom.png" alt="" class="divider-bottom">
+      </section>
+
+      <section class="about" id="about">
+        <!-- <div class="about-overlay"></div> -->
+        <div class="about-text">
+          <div class="title">DRIVER AND TEAM</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. doloribus suscipit harum quia
+            magnam blanditiis quis illum sit porro a architecto inventore.</p>
+          <div class="btn">Read More</div>
+        </div>
+        <img src="./images/rider.png" alt="" class="about-img">
+
+        <img src="./images/divider-bottom.png" alt="" class="divider-bottom">
+      </section>
+
+      <section class="gallery" id="gallery">
+        <div class="item item1">
+          <img src="./images/slider-1.jpg" alt="">
+          <div class="expand">
+            <ion-icon name="expand-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="item item2">
+          <img src="./images/slider-2.jpg" alt="">
+          <div class="expand">
+            <ion-icon name="expand-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="item item3">
+          <img src="./images/slider-3.jpg" alt="">
+          <div class="expand">
+            <ion-icon name="expand-outline"></ion-icon>
+          </div>
+        </div>
+      </section>
+
+      <div class="img-viewer-overlay"></div>
+      <div class="img-veiwer">
+        <div class="close-btn">
+          <ion-icon name="close-circle"></ion-icon>
+        </div>
+        <img src="./images/slider-1.jpg" alt="">
+      </div>
+
+      <section class="sponsors">
+        <img src="./images/rally-slider-sponsor.png" alt="">
+        <img src="./images/rally-slider-sponsor2.png" alt="">
+        <img src="./images/rally-slider-sponsor3.png" alt="">
+        <img src="./images/rally-slider-sponsor4.png" alt="">
+      </section>
+
+    </main>
+
+    <footer>
+      <a href="#" class="logo">CHAMP MOTO&nbsp;|</a>
+
+      <div class="social">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+      </div>
+
+      <div class="copyright">&copy; 2021 made by <span>codewithsadee</span> </div>
+    </footer>
+
+  </div>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+
+    const menuBtn = document.querySelector('.menu-btn');
+    const nav = document.querySelector('.nav');
+    const navItem = document.querySelectorAll('.nav li');
+    const expand = document.querySelectorAll('.expand');
+    const closeBtn = document.querySelector('.close-btn');
+    const imgVeiwer = document.querySelector('.img-veiwer');
+    const imgVeiwerImage = document.querySelector('.img-veiwer img')
+    const imgViewerOverlay = document.querySelector('.img-viewer-overlay');
+
+    const navBarToggle = function () {
+      menuBtn.classList.toggle('active');
+      nav.classList.toggle('active');
+    }
+    for (let i = 0; i < navItem.length; i++) {
+      navItem[i].addEventListener('click', navBarToggle)
+    }
+    menuBtn.addEventListener('click', navBarToggle);
+
+
+    for (let i = 0; i < expand.length; i++) {
+      expand[i].addEventListener('click', function () {
+        imgVeiwerImage.src = this.previousElementSibling.src
+        imgVeiwer.classList.add('active');
+        imgViewerOverlay.classList.add('active');
+      });
+    }
+
+    const rmImgViewer = function () {
+      imgVeiwer.classList.remove('active');
+      imgViewerOverlay.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', rmImgViewer);
+    imgViewerOverlay.addEventListener('click', rmImgViewer);
+
+  </script>
+</body>
+
+</html>
